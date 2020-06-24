@@ -1,8 +1,14 @@
 package br.com.loja.beans;
 
-public class CD extends Produto{
+import br.com.lojas.interfaces.Padrao;
+
+public class CD extends Produto implements Padrao{
 	private String artista;
 	private String gravadora;
+
+	public void definirValorVenda() {
+		super.setValorVenda(super.getValorCompra() * 1.1f);
+	}
 	
 	public String getAll() {
 		return super.getAll() + "\n" + artista + "\n" + gravadora;

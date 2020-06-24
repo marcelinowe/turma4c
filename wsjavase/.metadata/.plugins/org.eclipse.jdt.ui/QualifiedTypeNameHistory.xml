@@ -3,5 +3,8 @@
 <fullyQualifiedTypeName name="br.com.universidade.modelo.Aluno"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="br.com.universidade.modelo.Professor"/>
+<fullyQualifiedTypeName name="br.com.loja.beans.Livro"/>
+<fullyQualifiedTypeName name="br.com.loja.beans.Autor"/>
 <fullyQualifiedTypeName name="javax.swing.JOptionPane"/>
+<fullyQualifiedTypeName name="br.com.loja.tela.Magica"/>
 </qualifiedTypeNameHistroy>

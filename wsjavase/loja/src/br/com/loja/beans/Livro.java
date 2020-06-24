@@ -1,9 +1,15 @@
 package br.com.loja.beans;
 
-public class Livro extends Produto {
+import br.com.lojas.interfaces.Padrao;
+
+public class Livro extends Produto implements Padrao {
 	private Autor autor;
 	private String editora;
 	private String isbn;
+	
+	public void definirValorVenda() {
+		super.setValorVenda(super.getValorCompra() * 1.2f);
+	}
 	
 	public Livro() {
 		super();
@@ -18,7 +24,7 @@ public class Livro extends Produto {
 	}
 	
 	public String getAll() {
-		return super.getAll() + "\n" + autor.getAll() + "\n" + autor + "\n" + editora + "\n" + isbn;
+		return super.getAll() + "\n" + autor.getAll() + "\n" + editora + "\n" + isbn;
 	}
 	
 	public Autor getAutor() {
