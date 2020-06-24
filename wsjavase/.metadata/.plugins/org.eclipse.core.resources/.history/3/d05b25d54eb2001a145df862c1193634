@@ -1,0 +1,28 @@
+package br.com.veiculos.principal;
+
+import javax.swing.JOptionPane;
+
+import br.com.veiculos.modelo.Automovel;
+
+public class TesteVeiculo {
+
+	public static void main(String[] args) {
+		Automovel carro = new Automovel(JOptionPane.showInputDialog("Digite a placa"),
+				Float.parseFloat(JOptionPane.showInputDialog("Digite o valor do IPVA")),
+				Float.parseFloat(JOptionPane.showInputDialog("Digite o valor do Seguro")),
+				Integer.parseInt(JOptionPane.showInputDialog("Digite a velocidade atual")),
+				Integer.parseInt(JOptionPane.showInputDialog("Digite a capacidade do tanque"))
+				);
+		
+		if(JOptionPane.showConfirmDialog(null,"Deseja acelerar o carro?","Pergunta",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0){
+			do {
+				
+			}while(JOptionPane.showConfirmDialog(null,"Deseja acelerar o carro?","Pergunta",JOptionPane.YES_NO_OPTION,JOptionPane.QUESTION_MESSAGE)==0);
+		}
+
+		System.out.println("Custo total to carro....: "+carro.getTotal());
+		
+
+	}
+
+}

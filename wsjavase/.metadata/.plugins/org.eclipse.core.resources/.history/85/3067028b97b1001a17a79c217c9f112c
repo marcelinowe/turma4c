@@ -1,0 +1,6 @@
+package br.com.universidade.modelo;
+
+public class Professor {
+	private int id;
+	
+}

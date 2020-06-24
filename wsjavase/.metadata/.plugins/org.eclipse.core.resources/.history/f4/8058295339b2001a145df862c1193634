@@ -1,0 +1,12 @@
+package br.com.loja.principal;
+
+import br.com.loja.beans.Produto;
+
+public class ImplementacaoProduto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Produto objeto = new Produto();
+	}
+
+}

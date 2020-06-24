@@ -1,0 +1,5 @@
+package br.com.veiculos.modelo;
+
+public class Montadora {
+
+}

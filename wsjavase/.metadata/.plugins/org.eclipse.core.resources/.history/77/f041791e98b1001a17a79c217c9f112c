@@ -1,0 +1,10 @@
+package br.com.universidade.modelo;
+
+public class Professor {
+	private int id;
+	private String contratacao;
+	private String nome;
+	private String apelido;
+	
+	
+}

@@ -1,0 +1,9 @@
+package br.com.veiculos.modelo;
+
+public class Automovel {
+	private String placa;
+	private float valor;
+	private float valorSeguro;
+	private float velocidadeAtual;
+	
+}

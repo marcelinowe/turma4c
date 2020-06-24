@@ -1,0 +1,43 @@
+package br.com.loja.beans;
+
+public class Produto {
+	private int id;
+	private String descricao;
+	private float valorVenda;
+	private float valorCompra;
+	
+	public String getVenda() {
+		return null;
+	}
+	public double getValorVista() {
+		return 0;;
+	}
+	public void atualizaValor(float porcentagem) {
+		
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public float getValorVenda() {
+		return valorVenda;
+	}
+	public void setValorVenda(float valorVenda) {
+		this.valorVenda = valorVenda;
+	}
+	public float getValorCompra() {
+		return valorCompra;
+	}
+	public void setValorCompra(float valorCompra) {
+		this.valorCompra = valorCompra;
+	}
+
+}

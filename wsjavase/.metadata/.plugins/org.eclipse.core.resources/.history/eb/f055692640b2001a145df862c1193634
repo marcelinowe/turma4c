@@ -1,0 +1,21 @@
+package br.com.loja.principal;
+
+import br.com.loja.beans.Produto;
+
+public class ImplementacaoProduto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Produto objeto = new Produto(1);
+		objeto.setId(1);
+		objeto.setDescricao("NOTEBOOK");
+		objeto.setValorCompra(100);
+		objeto.setValorVenda(2000);
+		System.out.println("getVenda().................:" + objeto.getVenda());
+		System.out.println("getValorVista()............:" + objeto.getValorVista());
+		System.out.println("getValorVista(float).......:" + objeto.getValorVista(10));
+		objeto.atualizaValor(10);
+		
+	}
+
+}

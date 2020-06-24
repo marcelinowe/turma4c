@@ -1,0 +1,13 @@
+package br.com.universidade.implementacao;
+
+import br.com.universidade.modelo.Aluno;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		Aluno objeto = new Aluno();
+		objeto.preencherNome("Marcel Inowe");
+		System.out.println(objeto.exibirNome());
+	}
+
+}

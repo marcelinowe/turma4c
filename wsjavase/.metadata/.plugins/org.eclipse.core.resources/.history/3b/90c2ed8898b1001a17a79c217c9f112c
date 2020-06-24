@@ -1,0 +1,12 @@
+package br.com.universidade.implementacao;
+
+import br.com.universidade.modelo.Professor;
+
+public class Teste2 {
+
+	public static void main(String[] args) {
+		Professor professor = new Professor();
+		
+	}
+
+}

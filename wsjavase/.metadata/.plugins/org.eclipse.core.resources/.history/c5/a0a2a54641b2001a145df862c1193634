@@ -1,0 +1,85 @@
+package br.com.loja.beans;
+
+public class Produto {
+	
+	public Produto(int pId,String pDescricao,float pValorVenda, float pValorCompra) {
+		id = pId;
+		descricao=pDescricao;
+		valorVenda = pValorVenda;
+		valorCompra = pValorCompra;
+	}
+	
+	private int id;
+	private String descricao;
+	private float valorVenda;
+	private float valorCompra;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public String getDescricao() {
+		return descricao;
+	}
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+	public float getValorVenda() {
+		return valorVenda;
+	}
+	public void setValorVenda(float valorVenda) {
+		this.valorVenda = valorVenda;
+	}
+	public float getValorCompra() {
+		return valorCompra;
+	}
+	public void setValorCompra(float valorCompra) {
+		this.valorCompra = valorCompra;
+	}
+	
+	public float getPromocaoEspecial(String descricao, float porcentagem) {
+
+		if (this.descricao.equals(descricao)) {
+			return this.getValorVista(porcentagem);
+		}
+		
+		return valorVenda;
+	}
+	public float getValorVista(float porcentagem) {
+		return this.valorVenda - (this.valorVenda * (porcentagem/100));
+	}
+	public float getSubTotalVenda(int quantidade) {
+		if (quantidade < 0) {
+			return 0;	
+		}
+		else {
+			return this.valorVenda * quantidade;
+		}		
+	}
+	
+	public float getSubtotalCompra(int quantidade) {
+		if (quantidade < 0) {
+			return 0;	
+		}
+		else {
+			return this.valorCompra * quantidade;
+		}		
+	}
+
+	public void atualizaValorDesconto(float porcentagem) {
+		this.valorCompra = valorCompra - (valorCompra * (porcentagem/100));
+	}
+
+	public String getVenda() {
+		return this.descricao.toUpperCase() + "\n" + this.valorVenda;
+	}
+	
+	public double getValorVista() {
+		return this.valorVenda * 0.90;
+	}
+	
+	public void atualizaValor(float porcentagem) {
+		this.valorCompra = valorCompra + (valorCompra * (porcentagem/100));
+	}
+}

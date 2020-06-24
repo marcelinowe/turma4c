@@ -1,0 +1,10 @@
+package br.com.loja.principal;
+
+public class ImplementacaoProduto {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

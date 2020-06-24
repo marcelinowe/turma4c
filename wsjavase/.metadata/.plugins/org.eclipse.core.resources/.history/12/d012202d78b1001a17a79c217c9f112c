@@ -1,0 +1,14 @@
+package br.com.universidade.implementacao;
+
+import javax.swing.JOptionPane;
+
+public class Teste {
+
+	public static void main(String[] args) {
+		System.out.println("Oi...");
+		String nome = JOptionPane.showInputDialog("Digite o nome");
+		System.out.println(nome);
+
+	}
+
+}
