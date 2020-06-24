@@ -5,8 +5,9 @@ public class Livro extends Produto {
 	private String editora;
 	private String isbn;
 	
-	
-	
+	public Livro() {
+		super();
+	}
 	public Livro(int pId, String pDescricao, float pValorVenda, float pValorCompra, Autor autor, String editora,
 			String isbn) {
 		super(pId, pDescricao, pValorVenda, pValorCompra);
