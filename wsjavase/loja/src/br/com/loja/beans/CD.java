@@ -4,6 +4,10 @@ public class CD extends Produto{
 	private String artista;
 	private String gravadora;
 	
+	public String getAll() {
+		return super.getAll() + "\n" + artista + "\n" + gravadora;
+	}
+	
 	public CD() {
 		super();
 	}

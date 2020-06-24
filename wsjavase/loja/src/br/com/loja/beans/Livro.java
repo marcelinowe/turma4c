@@ -8,6 +8,7 @@ public class Livro extends Produto {
 	public Livro() {
 		super();
 	}
+	
 	public Livro(int pId, String pDescricao, float pValorVenda, float pValorCompra, Autor autor, String editora,
 			String isbn) {
 		super(pId, pDescricao, pValorVenda, pValorCompra);
@@ -15,6 +16,11 @@ public class Livro extends Produto {
 		this.editora = editora;
 		this.isbn = isbn;
 	}
+	
+	public String getAll() {
+		return super.getAll() + "\n" + autor.getAll() + "\n" + autor + "\n" + editora + "\n" + isbn;
+	}
+	
 	public Autor getAutor() {
 		return autor;
 	}

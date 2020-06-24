@@ -16,6 +16,11 @@ public class Produto {
 	private String descricao;
 	private float valorVenda;
 	private float valorCompra;
+	
+	public String getAll() {
+		return id + "\n" + descricao + "\n" + valorVenda + "\n" + valorCompra;
+	}
+	
 	public int getId() {
 		return id;
 	}

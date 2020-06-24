@@ -11,9 +11,15 @@ public class Autor {
 		this.email = email;
 		this.nome = nome;
 	}
+
 	private String nomeAcademico;
 	private String email;
 	private String nome;
+	
+	public String getAll() {
+		return nomeAcademico + "\n" + email + "\n" + nome;
+	}
+
 	public String getNomeAcademico() {
 		return nomeAcademico;
 	}
