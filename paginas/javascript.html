@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript" src="js/funcoes.js"></script>
+    <title>Testando funções JS</title>
+</head>
+<body>
+    <fieldset>
+        <legend>Teste de funções JS</legend>
+        <input type="button" value="Hello" onclick="exibir()">
+        <input type="button" value="Valida Numero" onclick="validarNumero()">
+
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">Valor 1:</span>
+            </div>
+            <input id="txtValor1" type="number" class="form-control" placeholder="Digite um valor" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">Valor 2:</span>
+            </div>
+            <input id="txtValor2" type="number" class="form-control" placeholder="Digite um valor" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+
+        <input id="operacao" name="operacao" value="+" type="radio" >+
+        <input id="operacao"name="operacao" value="-" type="radio" >-
+        <input id="operacao" name="operacao" value="*" type="radio" >*
+        <input id="operacao"name="operacao" value="/" type="radio" >/
+
+        <div class="input-group flex-nowrap">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="addon-wrapping">Resultado:</span>
+            </div>
+            <input readonly id="txtResultado" type="number" class="form-control" aria-label="Username" aria-describedby="addon-wrapping">
+        </div>
+        <input type="button" value="Somar - function Calcular" onclick="txtResultado.value=calcular(txtValor1.value,txtValor2.value,operacao.value)">
+        <input type="button" value="Somar - function Calculadora" onclick="calculadora()">
+
+
+
+    </fieldset>
+</body>
+</html>
