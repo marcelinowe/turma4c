@@ -7,21 +7,21 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.itau.aula.dao.UsuarioDAO;
+import br.com.itau.aula.dao.ArtistaDAO;
+import br.com.itau.aula.model.Artista;
 import br.com.itau.aula.model.Usuario;
 
 @RestController
-public class UsuarioController {
+public class ArtistaController {
+
 	@Autowired
-	private UsuarioDAO dao;
+	private ArtistaDAO dao;
 	
-	@GetMapping("/usuarios")
-	public ResponseEntity<List<Usuario>> exibirUsuarios(){
-		ArrayList<Usuario> lista = (ArrayList<Usuario>) dao.findAll();
+	@GetMapping("/artistas")
+	public ResponseEntity<List<Artista>> exibirArtistas(){
+		ArrayList<Artista> lista = (ArrayList<Artista>) dao.findAll();
 		
 		if(lista.size() == 0) {
 			return ResponseEntity.status(403).build();
@@ -29,12 +29,11 @@ public class UsuarioController {
 		else {
 			return ResponseEntity.ok(lista);
 		}
-		
 	}
-	
-	@GetMapping("/usuario/{id}")
-	public ResponseEntity<Usuario> exibirUsuarioId(@PathVariable int id){
-		Usuario resposta = dao.findById(id).orElse(null);
+
+	@GetMapping("/artista/{id}")
+	public ResponseEntity<Artista> exibirArtistaId(@PathVariable int id){
+		Artista resposta = dao.findById(id).orElse(null);
 		
 		if(resposta == null) {
 			return ResponseEntity.status(404).build();
@@ -45,14 +44,16 @@ public class UsuarioController {
 		}
 	}
 	
-	@PostMapping("/login")
-	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
-		Usuario resposta = dao.findByEmailAndSenha(usuario.getEmail(), usuario.getSenha());
-		if(resposta==null) {
+	@GetMapping("/artista/nacionalidade/{nacionalidade}")
+	public ResponseEntity<List<Artista>> exibirArtistaNacionalidade(@PathVariable String nacionalidade){
+		ArrayList<Artista> lista = (ArrayList<Artista>) dao.findByNacionalidade(nacionalidade);
+		
+		if(lista.size() == 0) {
 			return ResponseEntity.status(403).build();
 		}
 		else {
-			return ResponseEntity.ok(resposta);
+			return ResponseEntity.ok(lista);
 		}
 	}
+
 }
