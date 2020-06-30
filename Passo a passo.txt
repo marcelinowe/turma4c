@@ -1,0 +1,22 @@
+Acessar https://start.spring.io/
+    Selecionar Project: Maven, Language: Java, Spring Boot: 2.3.1
+    Group: br.com.itau
+    Artifact: aula
+    Name: aula
+    Description: Projeto da aula java web(JEE)
+    Dependencies(Add Dependencies)
+        Spring Boot DevTools
+        Spring Web
+        Spring Data JPA
+        MySQL Driver SQL
+    Clicar em generate
+Copiar o zip para o diretorio da workspace(desktop\turma4c\wsjavaee) e descompacte
+Abra o Eclipse no diretorio da WS(desktop\turma4c\wsjavaee)
+    File->Import->Maven->Existing Maven Projects
+        Root Directory: (desktop\turma4c\wsjavaee\aula)
+        Finish
+6. 
+7. 
+8. 
+9. 
+10. 
