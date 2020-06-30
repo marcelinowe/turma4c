@@ -1,10 +1,26 @@
 package br.com.itau.aula.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="TB_AULA_USUARIOS")
 public class Usuario {
+	@Column(name="ID")
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	private int id;
+	@Column(name="NOME",length=40)
 	private String nome;
+	@Column(name="SENHA",length=15)
 	private String senha;
+	@Column(name="EMAIL",length=70)
 	private String email;
+	@Column(name="FOTO",length=100)
 	private String foto;
 
 	public Usuario() {
