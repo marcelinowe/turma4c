@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import br.com.itau.aula.dao.ArtistaDAO;
 import br.com.itau.aula.model.Artista;
-import br.com.itau.aula.model.Usuario;
 
 @RestController
 public class ArtistaController {
