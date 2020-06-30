@@ -59,14 +59,12 @@ public class ArtistaController {
 	
 	@PostMapping("/artista/gravar")
 	public ResponseEntity<Artista> gravarArtista(@RequestBody Artista artista){
-		Artista resultado = dao.save(artista);
-		
-		if(resultado.getId() > 0) {
-			return ResponseEntity.ok(resultado);
+		try {
+			dao.save(artista);
+			return ResponseEntity.ok(artista);
 		}
-		else
-		{
-			return ResponseEntity.notFound().build();	
+		catch(Exception e) {
+			return ResponseEntity.status(500).build();
 		}
 	}
 	
