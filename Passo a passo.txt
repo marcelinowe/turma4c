@@ -15,8 +15,15 @@ Abra o Eclipse no diretorio da WS(desktop\turma4c\wsjavaee)
     File->Import->Maven->Existing Maven Projects
         Root Directory: (desktop\turma4c\wsjavaee\aula)
         Finish
-6. 
-7. 
-8. 
-9. 
+Selecione a raiz do projeto no Eclipse 
+    Run->Run As->JavaApplication->AulaApplication
+src/main/properties(configuração de banco de dados)
+    application.properties:
+        spring.datasource.url=jdbc:mysql://localhost:3306/itau?useTimezone=true&serverTimezone=UTC
+        criada demais configurações...
+Criado os pacotes:
+    br.com.itau.aula.controller
+    br.com.itau.aula.model
+    br.com.itau.aula.dao
+
 10. 
