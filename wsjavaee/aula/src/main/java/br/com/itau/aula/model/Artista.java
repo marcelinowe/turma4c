@@ -1,5 +1,6 @@
 package br.com.itau.aula.model;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.persistence.CascadeType;
@@ -10,7 +11,10 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
@@ -32,17 +36,22 @@ public class Artista {
 	@OneToMany(cascade=CascadeType.ALL,mappedBy="artista")
 	private List<Musica> musicas;
 	
+	@Column(name="CADASTRO")
+	@Temporal(TemporalType.DATE)
+	@JsonFormat(shape=JsonFormat.Shape.STRING,pattern = "dd/MM/yyyy")
+	private Date cadastro;
+	
 	public Artista() {
 		super();
 	}
 	
-
-	public Artista(int id, String nomeArtistico, String nacionalidade, List<Musica> musicas) {
+	public Artista(int id, String nomeArtistico, String nacionalidade, List<Musica> musicas, Date cadastro) {
 		super();
 		this.id = id;
 		this.nomeArtistico = nomeArtistico;
 		this.nacionalidade = nacionalidade;
 		this.musicas = musicas;
+		this.cadastro = cadastro;
 	}
 
 
@@ -76,5 +85,13 @@ public class Artista {
 
 	public void setMusicas(List<Musica> musicas) {
 		this.musicas = musicas;
+	}
+
+	public Date getCadastro() {
+		return cadastro;
+	}
+
+	public void setCadastro(Date cadastro) {
+		this.cadastro = cadastro;
 	}
 }

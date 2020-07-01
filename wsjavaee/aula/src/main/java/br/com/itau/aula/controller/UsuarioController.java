@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import br.com.itau.aula.dao.UsuarioDAO;
 import br.com.itau.aula.model.Usuario;
 
+@CrossOrigin("*")
 @RestController
 public class UsuarioController {
 	@Autowired
@@ -48,6 +50,7 @@ public class UsuarioController {
 	@PostMapping("/login")
 	public ResponseEntity<Usuario> login(@RequestBody Usuario usuario){
 		Usuario resposta = dao.findByEmailAndSenha(usuario.getEmail(), usuario.getSenha());
+		
 		if(resposta==null) {
 			return ResponseEntity.status(403).build();
 		}
