@@ -10,7 +10,7 @@ function carregaDash(){
                     document.getElementById("divparceiro").innerHTML = 
                     '<h5 class="card-title">Parceiro</h5>'+
                     '<p class="card-text">'+res.nomeAgente+'</p>'+
-                    '<p class="card-text">Volume: R$ '+res.volumeTransacional+'</p>';
+                    '<p class="card-text">Volume: R$ '+res.volumeTransacional.toLocaleString('pt-BR')+'</p>';
 
                     document.getElementById("divsucesso").innerHTML = 
                     '<h5 class="card-title">Transações com sucesso</h5>'+

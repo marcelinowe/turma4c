@@ -47,17 +47,18 @@ function populaDrop(lista){
 }
 
 function populaTable(lista){
-      var listaAgentes=
-      '<table align="center" width="90%" border="1" cellpadding="10" cellspacing="15">'+
-      '<tr>'+
-          '<th>Parceiro</th>'+
-          '<th>Volume Transacional</th>'+
-      '</tr>';
-      for(i=0;i<lista.length;i++){
-        listaAgentes += '<tr align="center"><td >'+lista[i].nomeAgente+'</td><td>'+lista[i].volumeTransacional+'</td></tr>';
-      }
-      listaAgentes +='</table>'
-      document.getElementById("listatop10").innerHTML = listaAgentes;
+    var listaAgentes=
+    '<table class="table table-dark" align="center" width="90%" border="1" cellpadding="10" cellspacing="15">'+
+    '<tr>'+
+        '<th scope="col">Parceiro</th>'+
+        '<th scope="col">Volume Transacional</th>'+
+    '</tr>';
+    for(i=0;i<lista.length;i++){
+        listaAgentes += '<tr align="center"><td >'+lista[i].nomeAgente+'</td><td>R$ '+lista[i].volumeTransacional.toLocaleString('pt-BR')+'</td></tr>';
+    }
+    listaAgentes +='</table>';
+
+    document.getElementById("listatop10").innerHTML = listaAgentes;
 }
 
 function dashAgente()
