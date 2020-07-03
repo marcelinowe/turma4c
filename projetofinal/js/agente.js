@@ -18,6 +18,7 @@ function carregaAgente(){
 }
 function logoff(){
     localStorage.removeItem("user");
+    localStorage.removeItem("agente");
     window.location = "login.html";
 }
 
@@ -35,7 +36,7 @@ function populaDrop(lista){
     '<div class="input-group-prepend">'+
       '<label class="input-group-text" for="inputGroupSelect01">Agente</label>'+
     '</div>'+
-    '<select class="custom-select" id="inputGroupSelect01" onchange="dashAgente()">'+
+    '<select id="listagente" class="custom-select" id="inputGroupSelect01" onchange="dashAgente()">'+
       '<option selected>Escolha o agente financeiro</option>';
       for(i=0;i<lista.length;i++){
         dropAgente+='<option value="'+lista[i].id+'">'+lista[i].nomeAgente+'</option>';
@@ -59,6 +60,10 @@ function populaTable(lista){
       document.getElementById("listatop10").innerHTML = listaAgentes;
 }
 
-function dashAgente(){
-    alert("hello....")
-}
+function dashAgente()
+{
+    var id = document.getElementById("listagente").value;
+    localStorage.setItem("agente",id);
+    window.location="dashagente.html"
+};
+
